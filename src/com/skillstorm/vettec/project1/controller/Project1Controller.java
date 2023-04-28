@@ -188,6 +188,7 @@ public class Project1Controller {
 
 		} else {
 			System.out.println("Please enter a valid response after restarting game.");
+		}
 
 			if (Player.getPlayerEnergy() >= 1 && Player.getPlayerIntelligence() >= 1 && Player.getPlayerPatience() >= 1)
 				System.out.println("\n-------------------------------------------\n"
@@ -199,4 +200,4 @@ public class Project1Controller {
 
 		}
 	}
-}
+
