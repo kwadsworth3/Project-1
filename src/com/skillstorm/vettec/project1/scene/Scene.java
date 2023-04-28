@@ -16,7 +16,6 @@ public class Scene {
 	Scanner in = new Scanner(System.in); // could not close scanner due to compilation issues
 
 	public void oSPlayScene(Player Miranda) { // each player gets their own method so points are customizable
-
 		String choice = in.nextLine().toUpperCase().trim(); // allows for clean user input
 		if (choice.equals("A")) {
 			Player.setPlayerEnergy((byte) (Player.getPlayerEnergy())); // manipulating static variables

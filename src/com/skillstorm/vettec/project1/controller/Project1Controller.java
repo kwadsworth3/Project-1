@@ -3,19 +3,19 @@ import com.skillstorm.vettec.project1.player.*;
 import com.skillstorm.vettec.project1.scene.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Project1Controller {
 
 	public static void main(String[] args) {
 
 		Player openingLine = new Player();
-		System.out.println(openingLine);
+		System.out.println(openingLine); // read from opening scene
 
 		Scanner in = new Scanner(System.in);
-		int user = in.nextInt();
+		int user = in.nextInt(); 
 
 		// choose a player to set your static variables
-
 		PLAYER: if (user == 1) {
 			Player character = new Miranda();
 			System.out.println(character);
@@ -154,7 +154,11 @@ public class Project1Controller {
 				sceneList.remove(randomIndex);
 				if (randomValue instanceof GasStation) {
 					System.out.println(gasStationScene);
+					try {
 					gasStationScene.gSPlayScene3(character);
+					} catch (Exception e) {
+						System.out.println("Please enter a valid response.");
+					}
 
 				} else if (randomValue instanceof FightingMan) {
 					System.out.println(fightingManScene);
