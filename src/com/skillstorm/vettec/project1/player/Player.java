@@ -1,21 +1,18 @@
 package com.skillstorm.vettec.project1.player;
 
 
-//import com.skillstorm.vettec.project1.scene;
-//import com.skillstorm.vettec.project1.controller;
-
 public class Player {
-	protected static byte playerEnergy;
-	protected static byte playerPatience;
-	protected static byte playerIntelligence;
+	protected static byte playerEnergy; // static variables so they can be changed based on player and scenario
+	protected static byte playerPatience; // each have getters and setters in order to access them below
+	protected static byte playerIntelligence; // and keep them protected 
 	
-	public Player() {
+	public Player() { // default constructor
 		Player.playerEnergy = 0;
 		Player.playerPatience = 0;
 		Player.playerIntelligence = 0;
 	}
 	
-	public Player(byte playerEnergy, byte playerPatience, byte playerIntelligence) {
+	public Player(byte playerEnergy, byte playerPatience, byte playerIntelligence) { // constructor
 		Player.playerEnergy = playerEnergy;
 		Player.playerPatience = playerPatience;
 		Player.playerIntelligence = playerIntelligence;
@@ -46,7 +43,7 @@ public class Player {
 		Player.playerIntelligence = playerIntelligence;
 	}
 	
-	@Override
+	@Override // default string for beginning to give user information on players
 	public String toString() {
 		return "Players Miranda, Albert, and Jackie have different energy, intelligence, and patience levels - "
 				+ "\nPlease choose one by entering their assigned number below:"
