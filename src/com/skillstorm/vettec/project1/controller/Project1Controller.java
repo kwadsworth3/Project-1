@@ -1,4 +1,5 @@
 package com.skillstorm.vettec.project1.controller;
+
 import com.skillstorm.vettec.project1.player.*;
 import com.skillstorm.vettec.project1.scene.*;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class Project1Controller {
 		System.out.println(openingLine); // read from opening scene
 
 		Scanner in = new Scanner(System.in);
-		int user = in.nextInt(); 
+		int user = in.nextInt();
 
 		// choose a player to set your static variables
 		PLAYER: if (user == 1) {
@@ -61,7 +62,7 @@ public class Project1Controller {
 				} else if (randomValue instanceof ReceptionistMessedUp) {
 					System.out.println(receptionistScene);
 					receptionistScene.rMPlayScene(character);
-					
+
 				} else {
 
 				}
@@ -116,14 +117,14 @@ public class Project1Controller {
 				} else if (randomValue instanceof ReceptionistMessedUp) {
 					System.out.println(receptionistScene);
 					receptionistScene.rMPlayScene2(character);
-					
+
 				} else {
 
 				}
 				count++;
 
 			}
-			
+
 			break PLAYER;
 		} else if (user == 3) {
 			Player character = new Jackie();
@@ -155,7 +156,7 @@ public class Project1Controller {
 				if (randomValue instanceof GasStation) {
 					System.out.println(gasStationScene);
 					try {
-					gasStationScene.gSPlayScene3(character);
+						gasStationScene.gSPlayScene3(character);
 					} catch (Exception e) {
 						System.out.println("Please enter a valid response.");
 					}
@@ -175,30 +176,27 @@ public class Project1Controller {
 				} else if (randomValue instanceof ReceptionistMessedUp) {
 					System.out.println(receptionistScene);
 					receptionistScene.rMPlayScene3(character);
-					
+
 				} else {
 
 				}
 				count++;
 
 			}
-			
+
 			break PLAYER;
 
 		} else {
-			System.out.println("Please enter a valid response."); // add try catch
+			System.out.println("Please enter a valid response after restarting game.");
 
-//		continue;
+			if (Player.getPlayerEnergy() >= 1 && Player.getPlayerIntelligence() >= 1 && Player.getPlayerPatience() >= 1)
+				System.out.println("\n-------------------------------------------\n"
+						+ "If you've made it this far, congratulations! You successfully made it to your interview. Here are your final stats: "
+						+ "\nEnergy: " + Player.getPlayerEnergy() + ", " + "\nIntelligence: "
+						+ Player.getPlayerIntelligence() + ", " + "\nPatience: " + Player.getPlayerPatience() + ".");
+
+			in.close();
+
 		}
-		
-		if (Player.getPlayerEnergy() >= 1 && Player.getPlayerIntelligence() >= 1 && Player.getPlayerPatience() >= 1)
-		System.out.println("\n-------------------------------------------\n"
-		+ "If you've made it this far, congratulations! You successfully made it to your interview. Here are your final stats: " 
-		+ "\nEnergy: " + Player.getPlayerEnergy() + ", "
-		+ "\nIntelligence: " + Player.getPlayerIntelligence() + ", " 
-		+ "\nPatience: " + Player.getPlayerPatience() + ".");
-
-		in.close();
-
 	}
 }
